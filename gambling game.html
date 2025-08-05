@@ -113,18 +113,18 @@
     <div class="coins">💰 Coins: <span id="coinCount">100</span></div>
 
     <div class="reel-window">
-      <div class="reel" id="r1">🍒</div>
+      <div class="reel" id="r1">7</div>
       <div class="reel" id="r2">🍋</div>
       <div class="reel" id="r3">🍊</div>
     </div>
 
-    <button id="spinBtn">Spin (10 Coins)</button>
+    <button id="spinBtn">Spin (2 Coins)</button>
     <p id="result"></p>
-    <p class="info">3 match = +50 | 2 match = +20 | Spin costs 10 coins</p>
+    <p class="info">3 match = +90 | 2 match = +40 | Spin costs 2 coins</p>
   </div>
 
   <script>
-    const symbols = ["🍒", "🍋", "🍊", "🍇", "💎", "7️⃣"];
+    const symbols = ["7", "🍋", "🍊", "🍇", "💎", "7️⃣"];
     const reels = [
       document.getElementById("r1"),
       document.getElementById("r2"),
@@ -167,13 +167,13 @@
 
         const [a, b, c] = result;
         if (a === b && b === c) {
-          resultText.textContent = "🎉 Jackpot! +50 Coins!";
+          resultText.textContent = ":O Jackpot! Holy Crap! +50 Coins!";
           updateCoins(50);
         } else if (a === b || b === c || a === c) {
-          resultText.textContent = "😊 You matched 2! +20 Coins!";
+          resultText.textContent = ":) You matched 2! GG +20 Coins!";
           updateCoins(20);
         } else {
-          resultText.textContent = "😞 No match. Try again!";
+          resultText.textContent = ":( No match. Womp womp";
         }
 
         spinButton.disabled = coins < SPIN_COST;
@@ -184,5 +184,6 @@
   </script>
 </body>
 </html>
+
 
 
